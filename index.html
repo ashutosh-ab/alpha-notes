@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Main Metas -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/notes.png" type="image/x-icon">
+    <!-- Title -->
+    <title>Alpha Notes</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-md bg-light shadow-sm sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="./assets/notes.png" alt="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent"
+                aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li> -->
+                </ul>
+                <div class="form-check form-switch me-3">
+                    <input class="form-check-input" type="checkbox" role="switch" id="modeSwitch">
+                    <label id="modeText" class="form-check-label" for="modeSwitch">Dark Mode</label>
+                </div>
+                <form class="d-flex" role="search">
+                    <input id="searchHere" class="form-control me-2" type="search" placeholder="Search Notes by Title"
+                        aria-label="Search">
+                    <button id="searchBtn" class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <div class="container my-3">
+        <h1 class="mb-3">Alpha Notes</h1>
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <!-- Add Note -->
+                    <div class="mb-3">
+                        <h3>Add a note</h3>
+                        <label for="noteTitle" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="noteTitle" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="noteDesc" class="form-label">Description</label>
+                        <textarea class="form-control" id="noteDesc" rows="4"></textarea>
+                    </div>
+                    <button class="btn btn-success me-1 mb-2" id="addBtn" type="submit"><i class="fa-solid fa-plus"></i>
+                        Add
+                        Note</button>
+                    <button onclick="clearTxt()" type="button" class="btn btn-secondary me-1 mb-2"><i
+                            class="fa-solid fa-broom"></i>
+                        Clear
+                        Text</button>
+                    <button onclick="removeSpace()" type="button" class="btn btn-primary me-1 mb-2"><i
+                            class="fa-solid fa-minus"></i> Remove
+                        Extra Spaces</button>
+                    <!-- Add Note End -->
+
+                    <!-- Editor -->
+                    <h4 class="my-2">Editing Options:</h4>
+                    <button onclick="boldTxt()" type="button" class="btn btn-primary me-1 mb-2"><i
+                            class="fa-solid fa-bold"></i>
+                        Bold</button>
+                    <button onclick="italicTxt()" type="button" class="btn btn-primary me-1 mb-2"><i
+                            class="fa-solid fa-italic"></i>
+                        Italic</button>
+                    <button onclick="underlineTxt()" type="button" class="btn btn-primary me-1 mb-2"><i
+                            class="fa-solid fa-underline"></i>
+                        Underline</button>
+                    <button onclick="lowercase()" type="button" class="btn btn-primary me-1 mb-2"><i
+                            class="fa-solid fa-circle-h"></i>
+                        Lowercase</button>
+                    <button onclick="uppercase()" type="button" class="btn btn-primary me-1 mb-2"><i
+                            class="fa-solid fa-a"></i>
+                        Uppercase</button>
+                    <!-- Editor End -->
+                </form>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Notes -->
+        <h3>Your Notes</h3>
+        <hr>
+        <div id="notesSec" class="row container-fluid"></div>
+        <!-- Notes End -->
+    </div>
+    <!-- Editor End -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <!-- Main Script -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>
